@@ -25,3 +25,18 @@
 
 ## Configurando o TypeORM
 
+### Instalando as dependências
+
+```bash
+- npm install typeorm
+- npm install reflect-metadata
+- npm install pg
+```
+
+### no arquivo de configuração typescript
+
+```bash
+"emitDecoratorMetadata": true,
+"experimentalDecorators": true
+```
+
