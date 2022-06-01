@@ -1,5 +1,9 @@
 import "reflect-metadata"
 import express from 'express'
+import env from 'dotenv'
+import './database/data-source'
+
+env.config()
 
 const app = express()
 

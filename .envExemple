@@ -1,0 +1,9 @@
+TYPEORM_CONNECTION = postgres
+TYPEORM_HOST = localhost
+TYPEORM_USERNAME = postgres
+TYPEORM_PASSWORD = postgres
+TYPEORM_DATABASE = code_drops_crud
+TYPEORM_PORT = 5432
+TYPEORM_SERVERPORT = 3000
+TYPEORM_MIGRATIONS = src/database/migrations/*.ts
+TYPEORM_MIGRATIONS_DIR = src/database/migrations
