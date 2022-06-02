@@ -13,7 +13,8 @@ const dataSource = new DataSource({
     // migrations: [
     //     "src/database/migrations/*.ts"
     // ]
-    migrations: [__dirname + '/migrations/*.ts']
+    migrations: [__dirname + '/migrations/*.ts'],
+    entities: ['src/entities/*.ts']
 })
 
 dataSource.initialize()

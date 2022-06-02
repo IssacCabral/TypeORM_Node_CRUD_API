@@ -91,5 +91,3 @@ O TypeORM sofreu algumas alterações que ainda não estão refletidas na docume
 
 Pode ser que essa estrutura mude, então se der problema procure nas issues do Github do TypeORM. 
 Mais detalhes sobre a alteração da CLI: https://github.com/typeorm/typeorm/issues/8810
-
-Eu recomendo trocar o TypeORM pelo Prisma logo, é mais simples e não tem esses problemas.

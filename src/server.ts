@@ -2,13 +2,14 @@ import "reflect-metadata"
 import express from 'express'
 import env from 'dotenv'
 import './database/data-source'
+import mainRouter from './routes/mainRouter'
 
 env.config()
 
 const app = express()
+const PORT = process.env.TYPEORM_SERVERPORT
 
-app.get('/', (req, res) => {
-    res.send('Tudo OK')
-})
+app.use(express.json())
+app.use(mainRouter)
 
-app.listen(3000, () => {console.log(`Listening on port 3000`)})
+app.listen(PORT, () => {console.log(`Listening on port ${PORT}`)})

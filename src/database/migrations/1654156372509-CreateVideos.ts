@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateFilms1654129146153 implements MigrationInterface {
+export class CreateVideos1654156372509 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'films',
+                name: 'videos',
                 columns: [
                     {
                         name: 'id',
@@ -18,21 +18,38 @@ export class CreateFilms1654129146153 implements MigrationInterface {
                         isUnique: true
                     },
                     {
-                        name: 'film_description',
+                        name: 'description',
                         type: 'varchar'
+                    },
+                    {
+                        name: 'category_id',
+                        type: 'uuid'
+                    },
+                    {
+                        name: 'duration',
+                        type: 'numeric'
                     },
                     {
                         name: 'created_at',
                         type: 'timestamp',
-                        default: "now()"
+                        default: 'now()'
+                    }
+                ],
+                foreignKeys: [
+                    {
+                        name: 'fk_videos_category',
+                        columnNames: ['category_id'],
+                        referencedTableName: 'categories',
+                        referencedColumnNames: ['id']
                     }
                 ]
             })
         )
+
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('films')
+        await queryRunner.dropTable('videos')
     }
 
 }
