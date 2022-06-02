@@ -1,10 +1,10 @@
 import {Request, Response} from 'express'
-import { CreateCategoryService } from '../services/CreateCategoryService'
+import { CreateVideoService } from '../services/CreateVideoService'
 
-export class CreateCategoryController{
+export class CreateVideoController{
     async handle(request: Request, response: Response){
-        const {name, description} = request.body
-        const dataMandatory = ["name", "description"]
+        const {name, description, duration, category_id} = request.body
+        const dataMandatory = ["name", "description", "duration", "category_id"]
         const errors: Array<any> = []
 
         dataMandatory.forEach(element => {
@@ -16,10 +16,10 @@ export class CreateCategoryController{
             }
         })
 
-        if(errors.length > 0){return response.json(errors)}
+        if(errors.length > 0) return response.json(errors)
 
-        const service = new CreateCategoryService()
-        const result = await service.execute({name, description})
+        const service = new CreateVideoService()
+        const result = await service.execute({name, description, duration, category_id})
 
         return result instanceof Error ? response.status(400).json(result.message) : response.status(201).json(result)
     }
