@@ -1,4 +1,4 @@
-// import { getRepository } from "typeorm" tá preterido, acredito que a doc tenha mudado 
+// import { getRepository } from "typeorm" tá preterido, provavelmente por conta da mudança na DOC
 import { Category } from "../entities/Category"
 import dataSource from '../database/data-source'
 
