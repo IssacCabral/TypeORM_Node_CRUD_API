@@ -20,7 +20,7 @@
 ```script
 "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
-  },
+},
 ```
 
 ## Configurando o TypeORM
